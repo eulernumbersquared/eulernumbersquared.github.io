@@ -2,3 +2,7 @@
 	path = testingbranch
 	url = https://github.com/eulernumbersquared/Beyond-the-limits.git
 	branch = main
+[submodule "project-test"]
+	path = project-test
+	url = https://github.com/eulernumbersquared/Beyond-the-limits.git
+	branch = testing
