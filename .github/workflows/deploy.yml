@@ -40,11 +40,15 @@ jobs:
       - name: Build game
         working-directory: project-test
         run: npm run build
+        - name: Prepare Pages directory
+          run: |
+            mkdir -p _site/project-test
+            cp -r project-test/dist/. _site/project-test/
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: project-test/dist
+        - name: Upload Pages artifact
+          uses: actions/upload-pages-artifact@v3
+          with:
+            path: _site
 
   deploy:
     environment:
